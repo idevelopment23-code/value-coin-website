@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Value Coin — Smart Business Platform</title>
-
-<meta name="description" content="Value Coin — Building the next value workforce.">
+<title>Value Coin - Login & Register</title>
 
 <style>
 
@@ -18,371 +16,259 @@
 
 body{
     font-family:Arial,"Noto Sans Bengali",sans-serif;
-    background:#f5f8ff;
+    background:#f4f7ff;
     color:#172554;
-    line-height:1.6;
-}
-
-a{
-    text-decoration:none;
 }
 
 /* HEADER */
 
-.header{
-    position:sticky;
-    top:0;
-    z-index:10;
+header{
     background:#061b55;
-    color:white;
-    box-shadow:0 3px 15px rgba(0,0,0,.12);
+    padding:16px 20px;
 }
 
 .nav{
-    max-width:1150px;
+    max-width:1100px;
     margin:auto;
-    padding:16px 20px;
     display:flex;
     align-items:center;
     justify-content:space-between;
 }
 
 .logo{
-    font-size:26px;
-    font-weight:800;
+    color:white;
+    font-size:27px;
+    font-weight:bold;
+    text-decoration:none;
 }
 
 .logo span{
     color:#ffd21c;
 }
 
-.menu{
-    display:flex;
-    gap:22px;
-}
-
-.menu a{
+.home-btn{
     color:white;
-    font-size:14px;
-}
-
-.actions{
-    display:flex;
-    gap:9px;
-}
-
-.login,
-.register{
-    padding:9px 15px;
-    border-radius:22px;
+    border:1px solid white;
+    padding:9px 17px;
+    border-radius:25px;
+    text-decoration:none;
     font-weight:bold;
-    font-size:13px;
 }
 
-.login{
-    border:1px solid white;
-    color:white;
-}
+/* MAIN */
 
-.register{
-    background:#ffd21c;
-    color:#071b50;
-}
-
-/* HERO */
-
-.hero{
-    background:linear-gradient(
-        135deg,
-        #06266d,
-        #0877dc 55%,
-        #00a9e8
-    );
-    color:white;
-}
-
-.hero-inner{
-    max-width:1150px;
-    margin:auto;
-    min-height:570px;
-    padding:75px 20px;
+.main{
+    min-height:calc(100vh - 150px);
+    padding:50px 20px;
     display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:45px;
-}
-
-.hero-text{
-    max-width:680px;
-}
-
-.badge{
-    display:inline-block;
-    background:rgba(255,255,255,.14);
-    border:1px solid rgba(255,255,255,.28);
-    padding:7px 14px;
-    border-radius:30px;
-    font-size:13px;
-    margin-bottom:20px;
-}
-
-.hero h1{
-    font-size:52px;
-    line-height:1.12;
-    margin-bottom:20px;
-}
-
-.hero h1 span{
-    color:#ffe000;
-}
-
-.hero p{
-    font-size:18px;
-    max-width:650px;
-    color:#eef7ff;
-}
-
-.hero-buttons{
-    display:flex;
-    gap:12px;
-    margin-top:28px;
-    flex-wrap:wrap;
-}
-
-.primary,
-.secondary{
-    padding:14px 25px;
-    border-radius:30px;
-    font-weight:800;
-}
-
-.primary{
-    background:#ffd21c;
-    color:#071b50;
-}
-
-.secondary{
-    border:1px solid white;
-    color:white;
-}
-
-/* COIN */
-
-.coin-wrap{
-    width:280px;
-    height:280px;
-    display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
+    background:
+    linear-gradient(135deg,#06266d,#0877dc,#00a9e8);
 }
 
-.coin{
-    width:230px;
-    height:230px;
+/* AUTH BOX */
+
+.auth-box{
+    width:100%;
+    max-width:440px;
+    background:white;
+    border-radius:25px;
+    padding:35px;
+    box-shadow:0 20px 60px rgba(0,0,0,.22);
+}
+
+/* LOGO */
+
+.auth-logo{
+    width:75px;
+    height:75px;
+    margin:0 auto 15px;
     border-radius:50%;
-    background:linear-gradient(
-        145deg,
-        #ffe35b,
-        #e39a08
-    );
-    border:9px solid #fff2a0;
-    box-shadow:0 20px 50px rgba(0,0,0,.28);
-
+    background:linear-gradient(145deg,#ffe35b,#e39a08);
+    border:5px solid #fff1a0;
     display:flex;
-    flex-direction:column;
     align-items:center;
     justify-content:center;
-
     color:#5b3300;
-}
-
-.coin b{
-    font-size:65px;
-    line-height:1;
-}
-
-.coin small{
-    font-size:14px;
+    font-size:24px;
     font-weight:bold;
-    margin-top:8px;
 }
 
-/* SECTION */
+/* TITLES */
 
-.section{
-    max-width:1150px;
-    margin:auto;
-    padding:65px 20px;
-}
-
-.title{
+.auth-box h1{
     text-align:center;
-    font-size:34px;
-    margin-bottom:10px;
+    font-size:29px;
+    margin-bottom:8px;
 }
 
 .subtitle{
     text-align:center;
     color:#64748b;
-    margin-bottom:38px;
+    margin-bottom:25px;
+    font-size:14px;
 }
 
-/* STATS */
+/* TABS */
 
-.stats{
+.tabs{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:16px;
-    margin-top:-45px;
+    grid-template-columns:1fr 1fr;
+    background:#eef3ff;
+    padding:5px;
+    border-radius:30px;
+    margin-bottom:25px;
+}
+
+.tab{
+    border:none;
+    background:transparent;
+    padding:12px;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:bold;
+    color:#64748b;
+    font-size:15px;
+}
+
+.tab.active{
+    background:#0866d9;
+    color:white;
+}
+
+/* FORM */
+
+.form{
+    display:none;
+}
+
+.form.active{
+    display:block;
+}
+
+.field{
+    margin-bottom:17px;
+}
+
+.field label{
+    display:block;
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:7px;
+}
+
+.field input{
+    width:100%;
+    padding:14px 15px;
+    border:1px solid #d8e0f0;
+    border-radius:12px;
+    outline:none;
+    font-size:15px;
+    background:#fafcff;
+}
+
+.field input:focus{
+    border-color:#0877dc;
+    box-shadow:0 0 0 3px rgba(8,119,220,.10);
+}
+
+/* PASSWORD */
+
+.password-box{
     position:relative;
 }
 
-.stat{
-    background:white;
-    border-radius:18px;
-    padding:25px;
-    text-align:center;
-    box-shadow:0 8px 28px rgba(20,50,100,.1);
+.password-box input{
+    padding-right:70px;
 }
 
-.stat b{
-    font-size:28px;
-    display:block;
+.show-password{
+    position:absolute;
+    right:10px;
+    top:50%;
+    transform:translateY(-50%);
+    border:none;
+    background:none;
     color:#0866d9;
+    cursor:pointer;
+    font-weight:bold;
 }
 
-.stat span{
+/* CHECKBOX */
+
+.check{
+    display:flex;
+    gap:8px;
+    align-items:flex-start;
+    margin:12px 0 20px;
     font-size:13px;
     color:#64748b;
 }
 
-/* CARDS */
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
+.check input{
+    margin-top:3px;
 }
 
-.card{
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 8px 25px rgba(20,50,100,.08);
-}
+/* BUTTON */
 
-.card .icon{
-    font-size:40px;
-    margin-bottom:12px;
-}
-
-.card h3{
-    margin-bottom:9px;
-}
-
-.card p{
-    color:#64748b;
-}
-
-/* PLANS */
-
-.plan{
-    border:2px solid #e6ecfa;
-    position:relative;
-}
-
-.plan.featured{
-    border-color:#0877dc;
-}
-
-.plan-tag{
-    position:absolute;
-    top:-13px;
-    right:20px;
-    background:#0877dc;
-    color:white;
-    border-radius:20px;
-    padding:5px 12px;
-    font-size:11px;
-    font-weight:bold;
-}
-
-.plan h3{
-    font-size:22px;
-}
-
-.price{
-    font-size:30px;
-    font-weight:800;
-    margin:12px 0;
-    color:#0866d9;
-}
-
-.plan ul{
-    list-style:none;
-    color:#64748b;
-    font-size:14px;
-}
-
-.plan li{
-    margin:8px 0;
-}
-
-.plan li:before{
-    content:"✓ ";
-    color:#0a9b62;
-    font-weight:bold;
-}
-
-/* NOTICE */
-
-.notice{
-    background:linear-gradient(
-        135deg,
-        #5424d8,
-        #a000ff
-    );
-    color:white;
-    border-radius:24px;
-    padding:40px;
-    text-align:center;
-}
-
-.notice h2{
-    font-size:30px;
-    margin-bottom:8px;
-}
-
-.notice p{
-    opacity:.92;
-}
-
-/* FAQ */
-
-.faq{
-    max-width:800px;
-    margin:auto;
-}
-
-.faq details{
-    background:white;
-    margin:12px 0;
-    border-radius:14px;
-    padding:18px 20px;
-    box-shadow:0 5px 18px rgba(20,50,100,.06);
-}
-
-.faq summary{
+.submit-btn{
+    width:100%;
+    border:none;
+    padding:15px;
+    border-radius:30px;
+    background:#ffd21c;
+    color:#071b50;
+    font-size:16px;
     font-weight:bold;
     cursor:pointer;
 }
 
-/* CONTACT */
+.submit-btn:hover{
+    opacity:.9;
+}
 
-.contact{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
+/* FORGOT */
+
+.forgot{
+    display:block;
+    text-align:right;
+    margin-top:-7px;
+    margin-bottom:20px;
+    color:#0866d9;
+    font-size:13px;
+    cursor:pointer;
+}
+
+/* DIVIDER */
+
+.divider{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:25px 0;
+    color:#94a3b8;
+    font-size:12px;
+}
+
+.divider:before,
+.divider:after{
+    content:"";
+    height:1px;
+    background:#e2e8f0;
+    flex:1;
+}
+
+/* SECURITY */
+
+.security{
+    background:#f0fdf4;
+    border:1px solid #bbf7d0;
+    color:#166534;
+    padding:12px;
+    border-radius:12px;
+    font-size:12px;
+    text-align:center;
 }
 
 /* FOOTER */
@@ -391,70 +277,52 @@ footer{
     background:#071533;
     color:white;
     text-align:center;
-    padding:35px 20px;
+    padding:25px 15px;
 }
 
 footer p{
     color:#b8c3dc;
-    margin-top:7px;
+    font-size:12px;
+    margin-top:5px;
+}
+
+/* SUCCESS MESSAGE */
+
+.message{
+    display:none;
+    margin-bottom:18px;
+    padding:12px;
+    border-radius:10px;
+    background:#eff6ff;
+    color:#1d4ed8;
     font-size:13px;
+    text-align:center;
+}
+
+.message.show{
+    display:block;
 }
 
 /* MOBILE */
 
-@media(max-width:800px){
+@media(max-width:500px){
 
-    .menu{
-        display:none;
+    .main{
+        padding:30px 15px;
+        align-items:flex-start;
     }
 
-    .hero-inner{
-        flex-direction:column;
-        text-align:center;
-        padding-top:55px;
+    .auth-box{
+        padding:25px 20px;
+        margin-top:10px;
     }
 
-    .hero h1{
-        font-size:38px;
+    .auth-box h1{
+        font-size:25px;
     }
 
-    .hero p{
-        font-size:16px;
-    }
-
-    .hero-buttons{
-        justify-content:center;
-    }
-
-    .coin-wrap{
-        width:220px;
-        height:220px;
-    }
-
-    .coin{
-        width:180px;
-        height:180px;
-    }
-
-    .coin b{
-        font-size:52px;
-    }
-
-    .stats{
-        grid-template-columns:repeat(2,1fr);
-        margin-top:-25px;
-    }
-
-    .cards{
-        grid-template-columns:1fr;
-    }
-
-    .contact{
-        grid-template-columns:1fr;
-    }
-
-    .title{
-        font-size:29px;
+    .logo{
+        font-size:23px;
     }
 
 }
@@ -462,553 +330,299 @@ footer p{
 </style>
 </head>
 
+
 <body>
 
 
 <!-- HEADER -->
 
-<header class="header">
+<header>
 
 <div class="nav">
 
-<a class="logo" href="#home">
+<a href="#" class="logo">
 Value <span>Coin</span>
 </a>
 
-<nav class="menu">
-
-<a href="#home">হোম</a>
-
-<a href="#about">
-আমাদের সম্পর্কে
+<a href="#" class="home-btn">
+← Home
 </a>
-
-<a href="#plans">
-পরিকল্পনা
-</a>
-
-<a href="#how">
-কীভাবে কাজ করে
-</a>
-
-<a href="#faq">
-FAQ
-</a>
-
-<a href="#contact">
-যোগাযোগ
-</a>
-
-</nav>
-
-<div class="actions">
-
-<a class="login" href="#login">
-Login
-</a>
-
-<a class="register" href="#register">
-Register
-</a>
-
-</div>
 
 </div>
 
 </header>
 
 
-<!-- HERO -->
+<!-- MAIN -->
 
-<section class="hero" id="home">
+<main class="main">
 
-<div class="hero-inner">
+<div class="auth-box">
 
-<div class="hero-text">
 
-<div class="badge">
-🚀 Smart Business • Future Workforce
+<div class="auth-logo">
+VC
 </div>
+
 
 <h1>
-
-Building The Next
-
-<span>
-Value Workforce
-</span>
-
+Welcome to Value Coin
 </h1>
 
-<p>
-
-Value Coin একটি আধুনিক ডিজিটাল ব্যবসায়িক প্ল্যাটফর্ম।
-প্রযুক্তি, বাস্তব ব্যবসা এবং ভবিষ্যৎ কর্মসংস্থানের সুযোগকে
-একটি সুন্দর ecosystem-এর মধ্যে আনার লক্ষ্যেই আমাদের যাত্রা।
-
-</p>
-
-<div class="hero-buttons">
-
-<a class="primary" href="#plans">
-পরিকল্পনা দেখুন →
-</a>
-
-<a class="secondary" href="#about">
-আরও জানুন
-</a>
-
-</div>
-
-</div>
-
-
-<div class="coin-wrap">
-
-<div class="coin">
-
-<b>
-VC
-</b>
-
-<small>
-VALUE COIN
-</small>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- STATS -->
-
-<section class="section" style="padding-top:0">
-
-<div class="stats">
-
-<div class="stat">
-
-<b>
-24/7
-</b>
-
-<span>
-Digital Access
-</span>
-
-</div>
-
-
-<div class="stat">
-
-<b>
-100%
-</b>
-
-<span>
-Transparent Information
-</span>
-
-</div>
-
-
-<div class="stat">
-
-<b>
-3+
-</b>
-
-<span>
-Core Services
-</span>
-
-</div>
-
-
-<div class="stat">
-
-<b>
-2026
-</b>
-
-<span>
-Our Journey
-</span>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section class="section" id="about">
-
-<h2 class="title">
-আমাদের পরিকল্পনা
-</h2>
-
 <p class="subtitle">
-
-ব্যবসা ও প্রযুক্তিকে সামনে রেখে
-Value Coin-এর মূল লক্ষ্য
-
+আপনার অ্যাকাউন্টে প্রবেশ করুন অথবা নতুন অ্যাকাউন্ট তৈরি করুন
 </p>
 
 
-<div class="cards">
+<!-- TABS -->
 
+<div class="tabs">
 
-<div class="card">
+<button
+class="tab active"
+id="loginTab"
+onclick="showLogin()"
+>
+Login
+</button>
 
-<div class="icon">
-💼
-</div>
-
-<h3>
-Business Growth
-</h3>
-
-<p>
-
-বাস্তব ব্যবসায়িক কার্যক্রম,
-দক্ষতা ও দীর্ঘমেয়াদি growth-এর
-জন্য পরিকল্পিত উদ্যোগ।
-
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">
-📊
-</div>
-
-<h3>
-Smart Dashboard
-</h3>
-
-<p>
-
-ভবিষ্যতে ব্যবহারকারীরা account,
-activity এবং প্রয়োজনীয় তথ্য
-একটি জায়গা থেকে দেখতে পারবেন।
-
-</p>
+<button
+class="tab"
+id="registerTab"
+onclick="showRegister()"
+>
+Register
+</button>
 
 </div>
 
 
-<div class="card">
+<!-- MESSAGE -->
 
-<div class="icon">
-🚀
-</div>
-
-<h3>
-Future Workforce
-</h3>
-
-<p>
-
-আধুনিক প্রযুক্তি ও দক্ষতা উন্নয়নের
-মাধ্যমে নতুন সুযোগ তৈরির লক্ষ্য।
-
-</p>
-
+<div class="message" id="message">
+Demo action completed.
 </div>
 
 
-</div>
+<!-- LOGIN FORM -->
 
-</section>
-
-
-<!-- PLANS -->
-
-<section class="section" id="plans">
-
-<h2 class="title">
-Business Plans
-</h2>
-
-<p class="subtitle">
-
-নিচের প্ল্যানগুলো বর্তমানে
-শুধুমাত্র প্রদর্শনী/ডেমো হিসেবে দেখানো হচ্ছে
-
-</p>
-
-
-<div class="cards">
-
-
-<div class="card plan">
-
-<h3>
-Starter
-</h3>
-
-<div class="price">
-Demo
-</div>
-
-<ul>
-
-<li>
-Basic account
-</li>
-
-<li>
-Activity overview
-</li>
-
-<li>
-Support access
-</li>
-
-</ul>
-
-</div>
-
-
-<div class="card plan featured">
-
-<div class="plan-tag">
-POPULAR
-</div>
-
-<h3>
-Business
-</h3>
-
-<div class="price">
-Demo
-</div>
-
-<ul>
-
-<li>
-Smart dashboard
-</li>
-
-<li>
-Business updates
-</li>
-
-<li>
-Detailed reports
-</li>
-
-</ul>
-
-</div>
-
-
-<div class="card plan">
-
-<h3>
-Enterprise
-</h3>
-
-<div class="price">
-Demo
-</div>
-
-<ul>
-
-<li>
-Advanced overview
-</li>
-
-<li>
-Business support
-</li>
-
-<li>
-Future features
-</li>
-
-</ul>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- HOW IT WORKS -->
-
-<section class="section" id="how">
-
-<div class="notice">
-
-<h2>
-🌟 Smart Work • Better Future
-</h2>
-
-<p>
-
-Value Coin-এর লক্ষ্য হলো একটি স্বচ্ছ,
-প্রযুক্তিনির্ভর এবং ব্যবসাভিত্তিক
-digital ecosystem তৈরি করা।
-
-</p>
-
-<a
-class="primary"
-href="#contact"
-style="display:inline-block;margin-top:20px"
+<form
+class="form active"
+id="loginForm"
+onsubmit="demoLogin(event)"
 >
 
-যোগাযোগ করুন
+<div class="field">
 
-</a>
+<label>
+Email / Mobile Number
+</label>
 
-</div>
-
-</section>
-
-
-<!-- FAQ -->
-
-<section class="section" id="faq">
-
-<h2 class="title">
-সাধারণ প্রশ্ন
-</h2>
-
-<p class="subtitle">
-
-Value Coin সম্পর্কে কিছু গুরুত্বপূর্ণ তথ্য
-
-</p>
-
-
-<div class="faq">
-
-
-<details>
-
-<summary>
-Value Coin কী?
-</summary>
-
-<p>
-
-Value Coin একটি পরিকল্পিত
-ডিজিটাল ব্যবসায়িক প্ল্যাটফর্মের
-ডেমো ওয়েবসাইট।
-
-</p>
-
-</details>
-
-
-<details>
-
-<summary>
-এখানে কি এখন টাকা জমা দেওয়া যাবে?
-</summary>
-
-<p>
-
-না। এই ওয়েবসাইটের বর্তমান সংস্করণটি
-শুধুমাত্র demo/front-end।
-বাস্তব আর্থিক লেনদেন চালুর আগে
-প্রয়োজনীয় আইনগত ও পেমেন্ট অনুমোদন
-নিশ্চিত করতে হবে।
-
-</p>
-
-</details>
-
-
-<details>
-
-<summary>
-Login ও Dashboard কি পরে যোগ করা যাবে?
-</summary>
-
-<p>
-
-হ্যাঁ। পরবর্তী ধাপে নিরাপদ backend,
-database এবং user/admin dashboard
-আলাদাভাবে তৈরি করা যাবে।
-
-</p>
-
-</details>
-
-
-</div>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section class="section" id="contact">
-
-<h2 class="title">
-যোগাযোগ
-</h2>
-
-<p class="subtitle">
-আমাদের সাথে যোগাযোগের জন্য
-</p>
-
-
-<div class="contact">
-
-
-<div class="card">
-
-<div class="icon">
-📧
-</div>
-
-<h3>
-Email
-</h3>
-
-<p>
-support@valuecoin.example
-</p>
+<input
+type="text"
+placeholder="আপনার Email অথবা Mobile Number"
+required
+>
 
 </div>
 
 
-<div class="card">
+<div class="field">
 
-<div class="icon">
-💬
+<label>
+Password
+</label>
+
+<div class="password-box">
+
+<input
+type="password"
+id="loginPassword"
+placeholder="আপনার Password"
+required
+>
+
+<button
+type="button"
+class="show-password"
+onclick="togglePassword('loginPassword',this)"
+>
+Show
+</button>
+
 </div>
 
-<h3>
-Support
-</h3>
+</div>
 
-<p>
-Customer Support • Digital Platform
-</p>
 
+<span
+class="forgot"
+onclick="forgotPassword()"
+>
+Forgot Password?
+</span>
+
+
+<button
+type="submit"
+class="submit-btn"
+>
+Login →
+</button>
+
+
+</form>
+
+
+<!-- REGISTER FORM -->
+
+<form
+class="form"
+id="registerForm"
+onsubmit="demoRegister(event)"
+>
+
+
+<div class="field">
+
+<label>
+Full Name
+</label>
+
+<input
+type="text"
+placeholder="আপনার পূর্ণ নাম"
+required
+>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Mobile Number
+</label>
+
+<input
+type="tel"
+placeholder="01XXXXXXXXX"
+required
+>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Email Address
+</label>
+
+<input
+type="email"
+placeholder="example@gmail.com"
+required
+>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Password
+</label>
+
+<div class="password-box">
+
+<input
+type="password"
+id="registerPassword"
+placeholder="কমপক্ষে 8 characters"
+required
+minlength="8"
+>
+
+<button
+type="button"
+class="show-password"
+onclick="togglePassword('registerPassword',this)"
+>
+Show
+</button>
+
+</div>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Confirm Password
+</label>
+
+<div class="password-box">
+
+<input
+type="password"
+id="confirmPassword"
+placeholder="Password আবার লিখুন"
+required
+>
+
+<button
+type="button"
+class="show-password"
+onclick="togglePassword('confirmPassword',this)"
+>
+Show
+</button>
+
+</div>
+
+</div>
+
+
+<label class="check">
+
+<input
+type="checkbox"
+required
+>
+
+<span>
+আমি Value Coin-এর Terms & Conditions এবং Privacy Policy পড়েছি ও সম্মত।
+</span>
+
+</label>
+
+
+<button
+type="submit"
+class="submit-btn"
+>
+Create Account →
+</button>
+
+
+</form>
+
+
+<div class="divider">
+SECURE DEMO ACCESS
+</div>
+
+
+<div class="security">
+🔒 আপনার তথ্যের নিরাপত্তা আমাদের অগ্রাধিকার
 </div>
 
 
 </div>
 
-</section>
+</main>
 
 
 <!-- FOOTER -->
@@ -1024,6 +638,145 @@ Value Coin
 </p>
 
 </footer>
+
+
+
+<script>
+
+/* SHOW LOGIN */
+
+function showLogin(){
+
+    document.getElementById("loginForm")
+    .classList.add("active");
+
+    document.getElementById("registerForm")
+    .classList.remove("active");
+
+    document.getElementById("loginTab")
+    .classList.add("active");
+
+    document.getElementById("registerTab")
+    .classList.remove("active");
+
+    hideMessage();
+}
+
+
+/* SHOW REGISTER */
+
+function showRegister(){
+
+    document.getElementById("registerForm")
+    .classList.add("active");
+
+    document.getElementById("loginForm")
+    .classList.remove("active");
+
+    document.getElementById("registerTab")
+    .classList.add("active");
+
+    document.getElementById("loginTab")
+    .classList.remove("active");
+
+    hideMessage();
+}
+
+
+/* PASSWORD */
+
+function togglePassword(id,button){
+
+    const input =
+    document.getElementById(id);
+
+    if(input.type === "password"){
+
+        input.type = "text";
+
+        button.innerText = "Hide";
+
+    }else{
+
+        input.type = "password";
+
+        button.innerText = "Show";
+
+    }
+
+}
+
+
+/* LOGIN DEMO */
+
+function demoLogin(event){
+
+    event.preventDefault();
+
+    const message =
+    document.getElementById("message");
+
+    message.innerText =
+    "Demo Login সফল হয়েছে। বাস্তব Login চালুর জন্য backend প্রয়োজন।";
+
+    message.classList.add("show");
+
+}
+
+
+/* REGISTER DEMO */
+
+function demoRegister(event){
+
+    event.preventDefault();
+
+    const password =
+    document.getElementById("registerPassword").value;
+
+    const confirm =
+    document.getElementById("confirmPassword").value;
+
+    if(password !== confirm){
+
+        alert("Password এবং Confirm Password একই নয়।");
+
+        return;
+
+    }
+
+    const message =
+    document.getElementById("message");
+
+    message.innerText =
+    "Demo Registration সফল হয়েছে। বাস্তব account তৈরি করতে backend প্রয়োজন।";
+
+    message.classList.add("show");
+
+}
+
+
+/* FORGOT PASSWORD */
+
+function forgotPassword(){
+
+    alert(
+        "Demo Version: Password recovery চালুর জন্য backend/email system প্রয়োজন।"
+    );
+
+}
+
+
+/* HIDE MESSAGE */
+
+function hideMessage(){
+
+    document
+    .getElementById("message")
+    .classList.remove("show");
+
+}
+
+</script>
 
 
 </body>
