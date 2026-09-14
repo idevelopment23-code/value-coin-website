@@ -2,12 +2,11 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>Value Coin - User Dashboard</title>
+<title>Value Coin</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -20,27 +19,40 @@ body{
     color:#172554;
 }
 
-/* HEADER */
+button,input{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+.hidden{
+    display:none!important;
+}
+
+
+/* ================= HEADER ================= */
 
 header{
     background:#061b55;
     color:white;
-    padding:15px 20px;
-    position:sticky;
-    top:0;
-    z-index:100;
 }
 
 .nav{
-    max-width:1200px;
+    max-width:1150px;
     margin:auto;
+    padding:15px 20px;
+    min-height:70px;
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
 
 .logo{
-    font-size:25px;
+    color:white;
+    text-decoration:none;
+    font-size:27px;
     font-weight:bold;
 }
 
@@ -48,15 +60,363 @@ header{
     color:#ffd21c;
 }
 
-.user-mini{
+.nav-buttons{
+    display:flex;
+    gap:8px;
+}
+
+.nav-btn{
+    border:1px solid white;
+    background:transparent;
+    color:white;
+    padding:9px 17px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+.nav-btn.register{
+    background:#ffd21c;
+    color:#071b50;
+    border-color:#ffd21c;
+}
+
+
+/* ================= HOME ================= */
+
+.hero{
+    background:linear-gradient(135deg,#06266d,#0877dc,#00a9e8);
+    color:white;
+    padding:75px 20px;
+}
+
+.hero-inner{
+    max-width:1150px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+}
+
+.hero-text{
+    max-width:650px;
+}
+
+.badge{
+    display:inline-block;
+    padding:9px 16px;
+    border-radius:25px;
+    background:rgba(255,255,255,.15);
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:50px;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#ffe000;
+}
+
+.hero p{
+    font-size:18px;
+    line-height:1.8;
+}
+
+.hero-buttons{
+    margin-top:28px;
+    display:flex;
+    gap:12px;
+}
+
+.primary{
+    border:none;
+    background:#ffd21c;
+    color:#071b50;
+    padding:14px 25px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:15px;
+}
+
+.secondary{
+    border:1px solid white;
+    background:transparent;
+    color:white;
+    padding:14px 25px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:15px;
+}
+
+.coin{
+    width:230px;
+    height:230px;
+    flex-shrink:0;
+    border-radius:50%;
+    background:linear-gradient(145deg,#ffe35b,#e39a08);
+    border:8px solid #fff1a0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    color:#5b3300;
+    box-shadow:0 20px 60px rgba(0,0,0,.3);
+}
+
+.coin strong{
+    font-size:60px;
+}
+
+.coin small{
+    font-weight:bold;
+}
+
+
+/* ================= SECTIONS ================= */
+
+.section{
+    max-width:1150px;
+    margin:auto;
+    padding:65px 20px;
+}
+
+.title{
+    text-align:center;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#64748b;
+    margin-bottom:35px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:28px;
+    border-radius:20px;
+    box-shadow:0 7px 25px rgba(20,50,100,.08);
+}
+
+.card-icon{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#64748b;
+    line-height:1.7;
+}
+
+
+/* ================= AUTH ================= */
+
+.auth-page{
+    min-height:calc(100vh - 70px);
+    background:linear-gradient(135deg,#06266d,#0877dc,#00a9e8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:35px 15px;
+}
+
+.auth-box{
+    background:white;
+    width:100%;
+    max-width:450px;
+    padding:32px;
+    border-radius:25px;
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+.auth-logo{
+    width:70px;
+    height:70px;
+    margin:auto;
+    border-radius:50%;
+    background:linear-gradient(145deg,#ffe35b,#e39a08);
+    border:5px solid #fff1a0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:23px;
+    font-weight:bold;
+    color:#5b3300;
+}
+
+.auth-box h1{
+    text-align:center;
+    margin:15px 0 7px;
+}
+
+.auth-subtitle{
+    text-align:center;
+    color:#64748b;
+    font-size:13px;
+    margin-bottom:22px;
+}
+
+.tabs{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    background:#eef3ff;
+    padding:5px;
+    border-radius:30px;
+    margin-bottom:22px;
+}
+
+.tab{
+    border:none;
+    background:transparent;
+    padding:11px;
+    border-radius:25px;
+    color:#64748b;
+    font-weight:bold;
+}
+
+.tab.active{
+    background:#0866d9;
+    color:white;
+}
+
+.form{
+    display:none;
+}
+
+.form.active{
+    display:block;
+}
+
+.field{
+    margin-bottom:15px;
+}
+
+.field label{
+    display:block;
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:6px;
+}
+
+.field input{
+    width:100%;
+    padding:13px;
+    border:1px solid #d7dfed;
+    border-radius:11px;
+    outline:none;
+}
+
+.field input:focus{
+    border-color:#0877dc;
+}
+
+.password-box{
+    position:relative;
+}
+
+.password-box input{
+    padding-right:60px;
+}
+
+.show-pass{
+    position:absolute;
+    right:9px;
+    top:50%;
+    transform:translateY(-50%);
+    border:none;
+    background:none;
+    color:#0866d9;
+    font-weight:bold;
+}
+
+.forgot{
+    display:block;
+    text-align:right;
+    color:#0866d9;
+    font-size:13px;
+    margin-bottom:17px;
+    cursor:pointer;
+}
+
+.auth-submit{
+    width:100%;
+    border:none;
+    background:#ffd21c;
+    color:#071b50;
+    padding:14px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:15px;
+}
+
+.terms{
+    display:flex;
+    gap:7px;
+    color:#64748b;
+    font-size:12px;
+    margin:15px 0;
+}
+
+.demo-info{
+    margin-top:18px;
+    padding:11px;
+    border-radius:10px;
+    background:#eff6ff;
+    color:#1d4ed8;
+    font-size:12px;
+    text-align:center;
+}
+
+
+/* ================= DASHBOARD ================= */
+
+#dashboardPage{
+    min-height:100vh;
+    background:#f4f7ff;
+}
+
+.dashboard-head{
+    background:#061b55;
+    color:white;
+}
+
+.dashboard-head-inner{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.dashboard-title{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.user-info{
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:9px;
 }
 
 .avatar{
-    width:42px;
-    height:42px;
+    width:40px;
+    height:40px;
     border-radius:50%;
     background:#ffd21c;
     color:#071b50;
@@ -66,270 +426,306 @@ header{
     font-weight:bold;
 }
 
-/* LAYOUT */
-
-.dashboard{
+.dashboard-layout{
     max-width:1200px;
     margin:auto;
-    display:grid;
-    grid-template-columns:240px 1fr;
-    min-height:calc(100vh - 72px);
+    display:flex;
+    min-height:calc(100vh - 70px);
 }
-
-/* SIDEBAR */
 
 .sidebar{
+    width:230px;
     background:white;
-    padding:25px 15px;
+    padding:15px 10px;
     border-right:1px solid #e2e8f0;
-}
-
-.sidebar-title{
-    font-size:12px;
-    color:#94a3b8;
-    margin:10px 12px;
-    text-transform:uppercase;
 }
 
 .side-btn{
     width:100%;
     border:none;
     background:transparent;
-    padding:13px 14px;
-    margin-bottom:5px;
-    border-radius:12px;
     text-align:left;
-    font-size:14px;
+    padding:13px;
+    border-radius:10px;
+    margin-bottom:4px;
     font-weight:bold;
-    color:#475569;
-    cursor:pointer;
+    color:#334155;
 }
 
-.side-btn:hover,
-.side-btn.active{
+.side-btn.active,
+.side-btn:hover{
     background:#eaf2ff;
     color:#0866d9;
 }
 
-.logout{
+.side-btn.logout{
     color:#dc2626;
 }
 
-/* CONTENT */
-
-.content{
-    padding:30px;
+.dashboard-content{
+    flex:1;
+    padding:28px;
 }
 
 .welcome{
-    margin-bottom:25px;
+    margin-bottom:23px;
 }
 
 .welcome h1{
     font-size:28px;
-    margin-bottom:7px;
+    margin-bottom:5px;
 }
 
 .welcome p{
     color:#64748b;
 }
 
-/* CARDS */
+
+/* ================= BALANCE ================= */
+
+.balance-card{
+    background:linear-gradient(135deg,#06266d,#0877dc);
+    color:white;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:22px;
+    box-shadow:0 10px 30px rgba(0,50,130,.2);
+}
+
+.balance-label{
+    opacity:.85;
+    margin-bottom:7px;
+}
+
+.balance{
+    font-size:38px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.balance-actions{
+    display:flex;
+    gap:10px;
+}
+
+.deposit-btn{
+    border:none;
+    background:#ffd21c;
+    color:#071b50;
+    padding:12px 22px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+.withdraw-btn{
+    border:1px solid white;
+    background:transparent;
+    color:white;
+    padding:12px 22px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+
+/* ================= STATS ================= */
 
 .stats{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:18px;
-    margin-bottom:25px;
+    gap:15px;
+    margin-bottom:22px;
 }
 
-.stat-card{
+.stat{
     background:white;
-    padding:22px;
-    border-radius:18px;
-    box-shadow:0 7px 25px rgba(20,50,100,.07);
+    padding:20px;
+    border-radius:17px;
+    box-shadow:0 6px 20px rgba(20,50,100,.06);
 }
 
 .stat-icon{
-    font-size:30px;
-    margin-bottom:12px;
+    font-size:27px;
+    margin-bottom:8px;
 }
 
-.stat-title{
+.stat p{
     color:#64748b;
     font-size:13px;
-    margin-bottom:7px;
 }
 
-.stat-value{
-    font-size:23px;
-    font-weight:bold;
+.stat h2{
+    margin-top:5px;
 }
 
-/* MAIN GRID */
 
-.main-grid{
-    display:grid;
-    grid-template-columns:1.5fr 1fr;
-    gap:20px;
-}
+/* ================= PANEL ================= */
 
 .panel{
     background:white;
+    padding:24px;
     border-radius:20px;
-    padding:25px;
-    box-shadow:0 7px 25px rgba(20,50,100,.07);
     margin-bottom:20px;
+    box-shadow:0 6px 20px rgba(20,50,100,.06);
 }
 
 .panel h2{
-    font-size:19px;
+    margin-bottom:17px;
+}
+
+.quick-actions{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.quick{
+    border:none;
+    background:#eef4ff;
+    padding:17px;
+    border-radius:12px;
+    font-weight:bold;
+    color:#172554;
+}
+
+
+/* ================= MODAL ================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:5000;
+}
+
+.modal-box{
+    width:100%;
+    max-width:420px;
+    background:white;
+    border-radius:20px;
+    padding:25px;
+}
+
+.modal-box h2{
     margin-bottom:18px;
 }
 
-/* ACTIVITY */
-
-.activity{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 0;
-    border-bottom:1px solid #edf1f7;
-}
-
-.activity:last-child{
-    border-bottom:none;
-}
-
-.activity-left{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.activity-icon{
-    width:40px;
-    height:40px;
-    border-radius:10px;
-    background:#eef4ff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.activity-name{
-    font-weight:bold;
-    font-size:14px;
-}
-
-.activity-date{
-    font-size:12px;
-    color:#94a3b8;
-    margin-top:4px;
-}
-
-.amount{
-    font-weight:bold;
-    color:#16a34a;
-}
-
-/* BUSINESS */
-
-.business-box{
-    background:linear-gradient(135deg,#073b9e,#00a9e8);
-    color:white;
-    border-radius:18px;
-    padding:25px;
-    margin-bottom:20px;
-}
-
-.business-box h2{
-    margin-bottom:10px;
-}
-
-.business-box p{
-    line-height:1.6;
-    opacity:.95;
-}
-
-/* BUTTON */
-
-.btn{
-    display:inline-block;
+.modal-close{
+    float:right;
     border:none;
-    padding:12px 20px;
-    border-radius:25px;
-    background:#ffd21c;
-    color:#071b50;
-    font-weight:bold;
-    cursor:pointer;
-    margin-top:15px;
-}
-
-/* NOTIFICATION */
-
-.notification{
-    padding:13px 0;
-    border-bottom:1px solid #edf1f7;
-    font-size:14px;
-    line-height:1.5;
-}
-
-.notification:last-child{
-    border-bottom:none;
-}
-
-.notification span{
-    display:block;
-    font-size:11px;
-    color:#94a3b8;
-    margin-top:4px;
-}
-
-/* PROFILE */
-
-.profile{
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-
-.profile-avatar{
-    width:65px;
-    height:65px;
+    background:#fee2e2;
+    color:#b91c1c;
+    width:30px;
+    height:30px;
     border-radius:50%;
-    background:linear-gradient(145deg,#ffd83d,#d88a00);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:25px;
     font-weight:bold;
-    color:#603900;
 }
 
-.profile-info h3{
-    margin-bottom:5px;
+.modal-box input{
+    width:100%;
+    padding:13px;
+    border:1px solid #d7dfed;
+    border-radius:10px;
+    margin:7px 0 15px;
+    outline:none;
 }
 
-.profile-info p{
-    color:#64748b;
+.modal-submit{
+    width:100%;
+    border:none;
+    padding:13px;
+    border-radius:25px;
+    background:#0866d9;
+    color:white;
+    font-weight:bold;
+}
+
+
+/* ================= TABLE ================= */
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,
+td{
+    padding:13px;
+    text-align:left;
+    border-bottom:1px solid #edf0f5;
+    white-space:nowrap;
+}
+
+th{
+    background:#f8faff;
     font-size:13px;
 }
 
-/* NOTICE */
-
-.notice{
-    background:#fff7ed;
-    border:1px solid #fed7aa;
-    color:#9a3412;
-    padding:14px;
-    border-radius:12px;
-    font-size:12px;
-    line-height:1.6;
-    margin-top:20px;
+.status{
+    padding:5px 9px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:bold;
 }
 
-/* FOOTER */
+.success{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.withdraw{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+
+/* ================= PROFILE ================= */
+
+.profile-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.profile-item{
+    background:#f8faff;
+    padding:17px;
+    border-radius:13px;
+}
+
+.profile-item span{
+    display:block;
+    color:#64748b;
+    font-size:12px;
+    margin-bottom:5px;
+}
+
+
+/* ================= NOTIFICATION ================= */
+
+.notice{
+    padding:16px;
+    background:#f8faff;
+    border-left:4px solid #0866d9;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
+.notice small{
+    display:block;
+    color:#64748b;
+    margin-top:5px;
+}
+
+
+/* ================= FOOTER ================= */
 
 footer{
     background:#071533;
@@ -341,109 +737,207 @@ footer{
 footer p{
     color:#b8c3dc;
     font-size:12px;
-    margin-top:5px;
+    margin-top:6px;
 }
 
-/* MOBILE */
 
-@media(max-width:900px){
+/* ================= MOBILE ================= */
 
-    .dashboard{
+@media(max-width:850px){
+
+    .hero-inner{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .cards{
         grid-template-columns:1fr;
-    }
-
-    .sidebar{
-        display:flex;
-        overflow-x:auto;
-        padding:10px;
-        border-right:none;
-        border-bottom:1px solid #e2e8f0;
-        gap:5px;
-    }
-
-    .sidebar-title{
-        display:none;
-    }
-
-    .side-btn{
-        min-width:max-content;
-        width:auto;
-        margin:0;
     }
 
     .stats{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:1fr 1fr;
     }
 
-    .main-grid{
-        grid-template-columns:1fr;
+    .quick-actions{
+        grid-template-columns:1fr 1fr;
     }
 
+    .sidebar{
+        width:190px;
+    }
 }
 
-@media(max-width:550px){
+@media(max-width:600px){
 
-    header{
-        padding:12px 15px;
+    .nav{
+        padding:12px 14px;
     }
 
     .logo{
         font-size:21px;
     }
 
-    .user-mini span{
+    .nav-btn{
+        padding:8px 11px;
+        font-size:12px;
+    }
+
+    .hero{
+        padding:50px 15px;
+    }
+
+    .hero h1{
+        font-size:31px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .coin{
+        width:170px;
+        height:170px;
+    }
+
+    .coin strong{
+        font-size:45px;
+    }
+
+    .auth-box{
+        padding:23px 18px;
+    }
+
+    .dashboard-head-inner{
+        padding:12px 14px;
+    }
+
+    .dashboard-title{
+        font-size:17px;
+    }
+
+    .user-info span{
         display:none;
     }
 
-    .content{
-        padding:20px 15px;
+    .dashboard-layout{
+        display:block;
+    }
+
+    .sidebar{
+        width:100%;
+        display:flex;
+        overflow-x:auto;
+        padding:8px;
+        border-right:none;
+        border-bottom:1px solid #e2e8f0;
+    }
+
+    .side-btn{
+        min-width:max-content;
+        margin:0 3px;
+    }
+
+    .dashboard-content{
+        padding:18px 13px;
     }
 
     .welcome h1{
         font-size:23px;
     }
 
+    .balance{
+        font-size:31px;
+    }
+
+    .balance-actions{
+        flex-direction:column;
+    }
+
+    .deposit-btn,
+    .withdraw-btn{
+        width:100%;
+    }
+
     .stats{
-        grid-template-columns:1fr 1fr;
-        gap:10px;
+        gap:9px;
     }
 
-    .stat-card{
-        padding:16px;
+    .stat{
+        padding:14px;
     }
 
-    .stat-value{
+    .stat h2{
         font-size:18px;
     }
 
-    .panel{
-        padding:18px;
+    .profile-grid{
+        grid-template-columns:1fr;
     }
 
+}
+
+
+/* ================= TOAST ================= */
+
+.toast{
+    position:fixed;
+    left:50%;
+    bottom:25px;
+    transform:translateX(-50%);
+    background:#071b50;
+    color:white;
+    padding:13px 20px;
+    border-radius:30px;
+    z-index:9000;
+    display:none;
+    font-size:13px;
+}
+
+.toast.show{
+    display:block;
 }
 
 </style>
 </head>
 
+
 <body>
 
-<!-- HEADER -->
 
-<header>
+<!-- ==================================================
+     HEADER
+================================================== -->
+
+<header id="homeHeader">
 
 <div class="nav">
 
-<div class="logo">
+<a href="#" class="logo"
+onclick="showHome()">
 Value <span>Coin</span>
-</div>
+</a>
 
-<div class="user-mini">
+<div class="nav-buttons">
 
-<span>Demo User</span>
+<button
+class="nav-btn"
+onclick="openLogin()">
+Login
+</button>
 
-<div class="avatar">
-DU
-</div>
+<button
+class="nav-btn register"
+onclick="openRegister()">
+Register
+</button>
 
 </div>
 
@@ -452,72 +946,597 @@ DU
 </header>
 
 
-<!-- DASHBOARD -->
 
-<div class="dashboard">
+<!-- ==================================================
+     HOME
+================================================== -->
+
+<section id="homePage">
+
+<div class="hero">
+
+<div class="hero-inner">
+
+<div class="hero-text">
+
+<div class="badge">
+🚀 Smart Business Platform
+</div>
+
+<h1>
+Building The Next
+<span>Value Workforce</span>
+</h1>
+
+<p>
+Value Coin একটি আধুনিক ডিজিটাল business
+platform। প্রযুক্তি, ব্যবসা এবং ভবিষ্যৎ
+কর্মসংস্থানের সুযোগকে একসাথে এগিয়ে নেওয়ার
+লক্ষ্যে তৈরি।
+</p>
+
+<div class="hero-buttons">
+
+<button
+class="primary"
+onclick="openRegister()">
+Create Account →
+</button>
+
+<button
+class="secondary"
+onclick="document.getElementById('plans').scrollIntoView()">
+আরও জানুন
+</button>
+
+</div>
+
+</div>
+
+
+<div class="coin">
+
+<strong>VC</strong>
+
+<small>VALUE COIN</small>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<section
+class="section"
+id="plans">
+
+<h2 class="title">
+আমাদের পরিকল্পনা
+</h2>
+
+<p class="subtitle">
+Smart technology এবং business growth
+</p>
+
+<div class="cards">
+
+
+<div class="card">
+
+<div class="card-icon">💼</div>
+
+<h3>
+Business Growth
+</h3>
+
+<p>
+বাস্তব ব্যবসায়িক কার্যক্রম এবং
+দীর্ঘমেয়াদি business growth-এর
+উপর গুরুত্ব দেওয়া হবে।
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">📊</div>
+
+<h3>
+Smart Dashboard
+</h3>
+
+<p>
+ব্যবহারকারীরা account এবং
+business activity এক জায়গা থেকে
+দেখতে পারবেন।
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">🚀</div>
+
+<h3>
+Future Workforce
+</h3>
+
+<p>
+প্রযুক্তি ও দক্ষতার মাধ্যমে
+নতুন সুযোগ তৈরির লক্ষ্য।
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<section class="section">
+
+<h2 class="title">
+Value Coin সম্পর্কে
+</h2>
+
+<p class="subtitle">
+Building a better digital future
+</p>
+
+<div class="card">
+
+<p>
+Value Coin-এর লক্ষ্য হলো প্রযুক্তিনির্ভর
+একটি আধুনিক business ecosystem তৈরি করা,
+যেখানে ব্যবহারকারী এবং ব্যবসাকে একটি
+সুন্দর platform-এর মধ্যে আনা যায়।
+</p>
+
+</div>
+
+</section>
+
+
+<div class="section">
+
+<div class="card"
+style="text-align:center;background:linear-gradient(135deg,#681cff,#a800ff);color:white;">
+
+<h2 style="margin-bottom:10px;">
+🌟 Value Coin
+</h2>
+
+<p style="color:white;margin-bottom:20px;">
+Smart Work • Better Future
+</p>
+
+<button
+class="primary"
+onclick="openRegister()">
+Join Now →
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     AUTH PAGE
+================================================== -->
+
+<section
+id="authPage"
+class="auth-page hidden">
+
+
+<div class="auth-box">
+
+<div class="auth-logo">
+VC
+</div>
+
+<h1>
+Value Coin
+</h1>
+
+<p class="auth-subtitle">
+Login করুন অথবা নতুন account তৈরি করুন
+</p>
+
+
+<div class="tabs">
+
+<button
+id="loginTab"
+class="tab active"
+onclick="openLogin()">
+Login
+</button>
+
+<button
+id="registerTab"
+class="tab"
+onclick="openRegister()">
+Register
+</button>
+
+</div>
+
+
+
+<!-- LOGIN FORM -->
+
+<form
+id="loginForm"
+class="form active"
+onsubmit="loginDemo(event)">
+
+<div class="field">
+
+<label>
+Email / Mobile
+</label>
+
+<input
+id="loginUser"
+type="text"
+placeholder="Email অথবা Mobile Number"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Password
+</label>
+
+<div class="password-box">
+
+<input
+id="loginPassword"
+type="password"
+placeholder="Password"
+required>
+
+<button
+type="button"
+class="show-pass"
+onclick="togglePass('loginPassword',this)">
+Show
+</button>
+
+</div>
+
+</div>
+
+
+<span
+class="forgot"
+onclick="forgotPassword()">
+Forgot Password?
+</span>
+
+
+<button
+type="submit"
+class="auth-submit">
+Login →
+</button>
+
+</form>
+
+
+
+<!-- REGISTER FORM -->
+
+<form
+id="registerForm"
+class="form"
+onsubmit="registerDemo(event)">
+
+<div class="field">
+
+<label>
+Full Name
+</label>
+
+<input
+id="regName"
+type="text"
+placeholder="আপনার পূর্ণ নাম"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Mobile Number
+</label>
+
+<input
+id="regMobile"
+type="tel"
+placeholder="01XXXXXXXXX"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Email
+</label>
+
+<input
+id="regEmail"
+type="email"
+placeholder="example@gmail.com"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Password
+</label>
+
+<div class="password-box">
+
+<input
+id="regPassword"
+type="password"
+placeholder="কমপক্ষে 8 characters"
+minlength="8"
+required>
+
+<button
+type="button"
+class="show-pass"
+onclick="togglePass('regPassword',this)">
+Show
+</button>
+
+</div>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Confirm Password
+</label>
+
+<div class="password-box">
+
+<input
+id="regConfirm"
+type="password"
+placeholder="Password আবার লিখুন"
+required>
+
+<button
+type="button"
+class="show-pass"
+onclick="togglePass('regConfirm',this)">
+Show
+</button>
+
+</div>
+
+</div>
+
+
+<label class="terms">
+
+<input type="checkbox" required>
+
+<span>
+আমি Terms & Conditions এবং Privacy Policy-তে সম্মত।
+</span>
+
+</label>
+
+
+<button
+type="submit"
+class="auth-submit">
+Create Account →
+</button>
+
+</form>
+
+
+<div class="demo-info">
+🔒 Demo Mode — কোনো real money transaction হচ্ছে না।
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     DASHBOARD
+================================================== -->
+
+<section
+id="dashboardPage"
+class="hidden">
+
+
+<div class="dashboard-head">
+
+<div class="dashboard-head-inner">
+
+<div class="dashboard-title">
+Value Coin Dashboard
+</div>
+
+<div class="user-info">
+
+<div
+class="avatar"
+id="avatar">
+U
+</div>
+
+<span id="userTopName">
+User
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="dashboard-layout">
 
 
 <!-- SIDEBAR -->
 
 <aside class="sidebar">
 
-<div class="sidebar-title">
-Dashboard
-</div>
 
-<button class="side-btn active">
-🏠 Dashboard
+<button
+class="side-btn active"
+onclick="showDash('overview',this)">
+🏠 Overview
 </button>
 
-<button class="side-btn">
+
+<button
+class="side-btn"
+onclick="showDash('profile',this)">
 👤 Profile
 </button>
 
-<button class="side-btn">
-💰 My Account
+
+<button
+class="side-btn"
+onclick="showDash('account',this)">
+💼 My Account
 </button>
 
-<button class="side-btn">
-📊 Business Activity
-</button>
 
-<button class="side-btn">
+<button
+class="side-btn"
+onclick="showDash('transactions',this)">
 📋 Transactions
 </button>
 
-<button class="side-btn">
+
+<button
+class="side-btn"
+onclick="showDash('business',this)">
+📈 Business Activity
+</button>
+
+
+<button
+class="side-btn"
+onclick="showDash('notifications',this)">
 🔔 Notifications
 </button>
 
-<button class="side-btn">
+
+<button
+class="side-btn"
+onclick="showDash('settings',this)">
 ⚙️ Settings
 </button>
 
-<button class="side-btn logout">
+
+<button
+class="side-btn logout"
+onclick="logout()">
 🚪 Logout
 </button>
+
 
 </aside>
 
 
-<!-- CONTENT -->
 
-<main class="content">
+<!-- DASHBOARD CONTENT -->
+
+<main class="dashboard-content">
 
 
-<!-- WELCOME -->
+<!-- OVERVIEW -->
+
+<div
+id="overview"
+class="dash-section">
+
 
 <div class="welcome">
 
 <h1>
-স্বাগতম, Demo User 👋
+স্বাগতম, <span id="welcomeName">User</span> 👋
 </h1>
 
 <p>
-আপনার Value Coin Dashboard-এ স্বাগতম।
+আপনার account overview
 </p>
 
 </div>
+
+
+<!-- BALANCE -->
+
+<div class="balance-card">
+
+<div class="balance-label">
+Current Demo Balance
+</div>
+
+<div
+class="balance"
+id="balance">
+৳ 0.00
+</div>
+
+
+<div class="balance-actions">
+
+<button
+class="deposit-btn"
+onclick="openDeposit()">
+💰 Deposit
+</button>
+
+<button
+class="withdraw-btn"
+onclick="openWithdraw()">
+💸 Withdraw
+</button>
+
+</div>
+
+</div>
+
 
 
 <!-- STATS -->
@@ -525,220 +1544,380 @@ Dashboard
 <div class="stats">
 
 
-<div class="stat-card">
+<div class="stat">
 
 <div class="stat-icon">
 💰
 </div>
 
-<div class="stat-title">
-Demo Account Balance
-</div>
+<p>
+Balance
+</p>
 
-<div class="stat-value">
+<h2 id="statBalance">
 ৳ 0.00
-</div>
+</h2>
 
 </div>
 
 
-<div class="stat-card">
+<div class="stat">
 
 <div class="stat-icon">
-📈
+📥
 </div>
 
-<div class="stat-title">
-Business Activity
+<p>
+Total Deposit
+</p>
+
+<h2 id="totalDeposit">
+৳ 0.00
+</h2>
+
 </div>
 
-<div class="stat-value">
-0
+
+<div class="stat">
+
+<div class="stat-icon">
+📤
 </div>
 
+<p>
+Total Withdraw
+</p>
+
+<h2 id="totalWithdraw">
+৳ 0.00
+</h2>
+
 </div>
 
 
-<div class="stat-card">
+<div class="stat">
 
 <div class="stat-icon">
 📋
 </div>
 
-<div class="stat-title">
-Transactions
-</div>
-
-<div class="stat-value">
-0
-</div>
-
-</div>
-
-
-<div class="stat-card">
-
-<div class="stat-icon">
-🔔
-</div>
-
-<div class="stat-title">
-Notifications
-</div>
-
-<div class="stat-value">
-2
-</div>
-
-</div>
-
-
-</div>
-
-
-<!-- MAIN GRID -->
-
-<div class="main-grid">
-
-
-<div>
-
-
-<!-- BUSINESS -->
-
-<div class="business-box">
-
-<h2>
-🚀 Business Activity
-</h2>
-
 <p>
-Value Coin-এর ব্যবসায়িক কার্যক্রম, পারফরম্যান্স
-এবং ভবিষ্যৎ কার্যক্রম এখানে দেখা যাবে।
+Transactions
 </p>
 
-<button class="btn">
-View Activity →
-</button>
+<h2 id="transactionCount">
+0
+</h2>
 
 </div>
 
 
-<!-- TRANSACTIONS -->
+</div>
+
+
+
+<!-- QUICK ACTION -->
 
 <div class="panel">
 
 <h2>
-📋 Recent Transactions
+⚡ Quick Actions
 </h2>
 
+<div class="quick-actions">
 
-<div class="activity">
+<button
+class="quick"
+onclick="openDeposit()">
+💰 Deposit
+</button>
 
-<div class="activity-left">
+<button
+class="quick"
+onclick="openWithdraw()">
+💸 Withdraw
+</button>
 
-<div class="activity-icon">
-📄
-</div>
+<button
+class="quick"
+onclick="showDash('transactions')">
+📋 History
+</button>
 
-<div>
-
-<div class="activity-name">
-No Transactions
-</div>
-
-<div class="activity-date">
-আপনার কোনো transaction নেই
-</div>
-
-</div>
-
-</div>
-
-<div class="amount">
-৳ 0.00
-</div>
-
-</div>
-
-
-<div class="activity">
-
-<div class="activity-left">
-
-<div class="activity-icon">
-🔐
-</div>
-
-<div>
-
-<div class="activity-name">
-Account Created
-</div>
-
-<div class="activity-date">
-Demo Account
-</div>
-
-</div>
-
-</div>
-
-<div class="amount">
-Completed
-</div>
-
-</div>
-
+<button
+class="quick"
+onclick="showDash('profile')">
+👤 Profile
+</button>
 
 </div>
 
 </div>
 
 
-<div>
+
+<div class="panel">
+
+<h2>
+📢 Demo Notice
+</h2>
+
+<p style="color:#64748b;line-height:1.8;">
+
+Deposit এবং Withdraw এখানে শুধুমাত্র
+Demo হিসেবে কাজ করছে। Balance ও
+Transaction History browser-এর
+local storage-এ সংরক্ষিত হয়।
+
+বাস্তব অর্থ লেনদেনের জন্য নিরাপদ
+backend, database এবং অনুমোদিত
+payment system প্রয়োজন।
+
+</p>
+
+</div>
+
+
+</div>
+
 
 
 <!-- PROFILE -->
 
+<div
+id="profile"
+class="dash-section hidden">
+
 <div class="panel">
 
 <h2>
-👤 Profile
+👤 My Profile
 </h2>
 
-<div class="profile">
 
-<div class="profile-avatar">
-DU
+<div class="profile-grid">
+
+
+<div class="profile-item">
+
+<span>
+Full Name
+</span>
+
+<strong id="profileName">
+User
+</strong>
+
 </div>
 
-<div class="profile-info">
+
+<div class="profile-item">
+
+<span>
+Mobile Number
+</span>
+
+<strong id="profileMobile">
+-
+</strong>
+
+</div>
+
+
+<div class="profile-item">
+
+<span>
+Email
+</span>
+
+<strong id="profileEmail">
+-
+</strong>
+
+</div>
+
+
+<div class="profile-item">
+
+<span>
+Account
+</span>
+
+<strong>
+<span class="status success">
+Demo Active
+</span>
+</strong>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ACCOUNT -->
+
+<div
+id="account"
+class="dash-section hidden">
+
+<div class="panel">
+
+<h2>
+💼 My Account
+</h2>
+
+<p style="color:#64748b;line-height:1.8;">
+
+আপনার Demo account balance:
+<strong id="accountBalance">
+৳ 0.00
+</strong>
+
+<br><br>
+
+এখানে ভবিষ্যতে backend-এর মাধ্যমে
+নিরাপদ account information দেখানো
+যাবে।
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- TRANSACTIONS -->
+
+<div
+id="transactions"
+class="dash-section hidden">
+
+<div class="panel">
+
+<h2>
+📋 Transaction History
+</h2>
+
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Date</th>
+<th>Type</th>
+<th>Amount</th>
+<th>Balance</th>
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody
+id="transactionBody">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- BUSINESS -->
+
+<div
+id="business"
+class="dash-section hidden">
+
+<div class="panel">
+
+<h2>
+📈 Business Activity
+</h2>
+
+<div class="cards">
+
+
+<div class="card">
+
+<div class="card-icon">
+🏢
+</div>
 
 <h3>
-Demo User
+Business Status
 </h3>
 
 <p>
-demo@example.com
+Demo platform active
 </p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">
+📊
+</div>
+
+<h3>
+Activity
+</h3>
 
 <p>
-01XXXXXXXXX
+Account activity tracking enabled
 </p>
 
 </div>
 
+
+<div class="card">
+
+<div class="card-icon">
+🚀
 </div>
 
-<button class="btn">
-Edit Profile
-</button>
+<h3>
+Future Growth
+</h3>
+
+<p>
+Business information এখানে যুক্ত করা যাবে।
+</p>
 
 </div>
+
+
+</div>
+
+</div>
+
+</div>
+
 
 
 <!-- NOTIFICATIONS -->
+
+<div
+id="notifications"
+class="dash-section hidden">
 
 <div class="panel">
 
@@ -746,43 +1925,75 @@ Edit Profile
 🔔 Notifications
 </h2>
 
-<div class="notification">
-
-Welcome to Value Coin Dashboard.
-
-<span>
-Just now
-</span>
-
-</div>
-
-<div class="notification">
-
-Your account is currently in Demo Mode.
-
-<span>
-Today
-</span>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-<!-- NOTICE -->
 
 <div class="notice">
 
-⚠️ <b>Demo Version:</b>
-এই Dashboard বর্তমানে শুধুমাত্র UI/Demo হিসেবে তৈরি।
-বাস্তব account, টাকা জমা, withdrawal বা investment
-চালুর জন্য নিরাপদ backend, database এবং প্রয়োজনীয়
-আইনগত/নিয়ন্ত্রক অনুমোদন প্রয়োজন।
+<strong>
+Welcome to Value Coin
+</strong>
+
+<small>
+আপনার Demo account সফলভাবে তৈরি হয়েছে।
+</small>
+
+</div>
+
+
+<div class="notice">
+
+<strong>
+Deposit / Withdraw
+</strong>
+
+<small>
+Demo balance এবং transaction history আপডেট হবে।
+</small>
+
+</div>
+
+
+<div class="notice">
+
+<strong>
+Security
+</strong>
+
+<small>
+বাস্তব অর্থ লেনদেন এখনো চালু করা হয়নি।
+</small>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- SETTINGS -->
+
+<div
+id="settings"
+class="dash-section hidden">
+
+<div class="panel">
+
+<h2>
+⚙️ Settings
+</h2>
+
+<p style="color:#64748b;line-height:1.8;">
+
+Demo Settings<br><br>
+
+Account: Active<br>
+Notifications: Enabled<br>
+Demo Transactions: Enabled
+
+</p>
+
+</div>
 
 </div>
 
@@ -790,6 +2001,111 @@ Today
 </main>
 
 </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     DEPOSIT MODAL
+================================================== -->
+
+<div
+id="depositModal"
+class="modal hidden">
+
+<div class="modal-box">
+
+<button
+class="modal-close"
+onclick="closeDeposit()">
+×
+</button>
+
+<h2>
+💰 Demo Deposit
+</h2>
+
+<label>
+Deposit Amount
+</label>
+
+<input
+id="depositAmount"
+type="number"
+min="1"
+placeholder="যেমন: 1000">
+
+<button
+class="modal-submit"
+onclick="makeDeposit()">
+Confirm Demo Deposit
+</button>
+
+<p style="font-size:12px;color:#64748b;margin-top:12px;">
+এটি Demo transaction। কোনো real payment হবে না।
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==================================================
+     WITHDRAW MODAL
+================================================== -->
+
+<div
+id="withdrawModal"
+class="modal hidden">
+
+<div class="modal-box">
+
+<button
+class="modal-close"
+onclick="closeWithdraw()">
+×
+</button>
+
+<h2>
+💸 Demo Withdraw
+</h2>
+
+<label>
+Withdraw Amount
+</label>
+
+<input
+id="withdrawAmount"
+type="number"
+min="1"
+placeholder="যেমন: 500">
+
+<button
+class="modal-submit"
+onclick="makeWithdraw()">
+Confirm Demo Withdraw
+</button>
+
+<p style="font-size:12px;color:#64748b;margin-top:12px;">
+Demo balance থেকে amount কমবে। কোনো real payment হবে না।
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- TOAST -->
+
+<div
+id="toast"
+class="toast">
+Success
+</div>
+
 
 
 <!-- FOOTER -->
@@ -801,11 +2117,816 @@ Value Coin
 </h3>
 
 <p>
-© 2026 Value Coin. All rights reserved.
+© 2026 Value Coin. Demo Platform
 </p>
 
 </footer>
 
+
+
+<script>
+
+/* ==================================================
+   DATA
+================================================== */
+
+let currentUser =
+JSON.parse(localStorage.getItem("vc_user")) || null;
+
+let balance =
+Number(localStorage.getItem("vc_balance")) || 0;
+
+let totalDeposit =
+Number(localStorage.getItem("vc_total_deposit")) || 0;
+
+let totalWithdraw =
+Number(localStorage.getItem("vc_total_withdraw")) || 0;
+
+let transactions =
+JSON.parse(localStorage.getItem("vc_transactions")) || [];
+
+
+
+/* ==================================================
+   HELPERS
+================================================== */
+
+function money(number){
+
+    return "৳ " +
+    Number(number).toLocaleString(
+        "en-BD",
+        {
+            minimumFractionDigits:2,
+            maximumFractionDigits:2
+        }
+    );
+
+}
+
+
+function saveData(){
+
+    localStorage.setItem(
+        "vc_balance",
+        balance
+    );
+
+    localStorage.setItem(
+        "vc_total_deposit",
+        totalDeposit
+    );
+
+    localStorage.setItem(
+        "vc_total_withdraw",
+        totalWithdraw
+    );
+
+    localStorage.setItem(
+        "vc_transactions",
+        JSON.stringify(transactions)
+    );
+
+}
+
+
+function showToast(text){
+
+    const toast =
+    document.getElementById("toast");
+
+    toast.innerText = text;
+
+    toast.classList.add("show");
+
+    setTimeout(function(){
+
+        toast.classList.remove("show");
+
+    },2500);
+
+}
+
+
+
+/* ==================================================
+   PAGE CONTROL
+================================================== */
+
+function showHome(){
+
+    document.getElementById("homePage")
+    .classList.remove("hidden");
+
+    document.getElementById("authPage")
+    .classList.add("hidden");
+
+    document.getElementById("dashboardPage")
+    .classList.add("hidden");
+
+    document.getElementById("homeHeader")
+    .classList.remove("hidden");
+
+    window.scrollTo(0,0);
+
+}
+
+
+function openLogin(){
+
+    document.getElementById("homePage")
+    .classList.add("hidden");
+
+    document.getElementById("dashboardPage")
+    .classList.add("hidden");
+
+    document.getElementById("authPage")
+    .classList.remove("hidden");
+
+    document.getElementById("homeHeader")
+    .classList.remove("hidden");
+
+    document.getElementById("loginForm")
+    .classList.add("active");
+
+    document.getElementById("registerForm")
+    .classList.remove("active");
+
+    document.getElementById("loginTab")
+    .classList.add("active");
+
+    document.getElementById("registerTab")
+    .classList.remove("active");
+
+    window.scrollTo(0,0);
+
+}
+
+
+function openRegister(){
+
+    document.getElementById("homePage")
+    .classList.add("hidden");
+
+    document.getElementById("dashboardPage")
+    .classList.add("hidden");
+
+    document.getElementById("authPage")
+    .classList.remove("hidden");
+
+    document.getElementById("homeHeader")
+    .classList.remove("hidden");
+
+    document.getElementById("registerForm")
+    .classList.add("active");
+
+    document.getElementById("loginForm")
+    .classList.remove("active");
+
+    document.getElementById("registerTab")
+    .classList.add("active");
+
+    document.getElementById("loginTab")
+    .classList.remove("active");
+
+    window.scrollTo(0,0);
+
+}
+
+
+
+/* ==================================================
+   PASSWORD
+================================================== */
+
+function togglePass(id,button){
+
+    const input =
+    document.getElementById(id);
+
+    if(input.type === "password"){
+
+        input.type = "text";
+
+        button.innerText = "Hide";
+
+    }else{
+
+        input.type = "password";
+
+        button.innerText = "Show";
+
+    }
+
+}
+
+
+
+/* ==================================================
+   REGISTER
+================================================== */
+
+function registerDemo(event){
+
+    event.preventDefault();
+
+    const name =
+    document.getElementById("regName").value.trim();
+
+    const mobile =
+    document.getElementById("regMobile").value.trim();
+
+    const email =
+    document.getElementById("regEmail").value.trim();
+
+    const password =
+    document.getElementById("regPassword").value;
+
+    const confirm =
+    document.getElementById("regConfirm").value;
+
+
+    if(password !== confirm){
+
+        alert(
+            "Password এবং Confirm Password একই নয়।"
+        );
+
+        return;
+
+    }
+
+
+    currentUser = {
+
+        name:name,
+        mobile:mobile,
+        email:email
+
+    };
+
+
+    localStorage.setItem(
+        "vc_user",
+        JSON.stringify(currentUser)
+    );
+
+
+    showToast(
+        "Registration সফল হয়েছে!"
+    );
+
+
+    setTimeout(function(){
+
+        openDashboard();
+
+    },700);
+
+}
+
+
+
+/* ==================================================
+   LOGIN
+================================================== */
+
+function loginDemo(event){
+
+    event.preventDefault();
+
+
+    let username =
+    document.getElementById("loginUser").value.trim();
+
+
+    if(!currentUser){
+
+        currentUser = {
+
+            name:
+            username.includes("@")
+            ? username.split("@")[0]
+            : username,
+
+            mobile:
+            username,
+
+            email:
+            username.includes("@")
+            ? username
+            : ""
+
+        };
+
+
+        localStorage.setItem(
+            "vc_user",
+            JSON.stringify(currentUser)
+        );
+
+    }
+
+
+    showToast(
+        "Login সফল হয়েছে!"
+    );
+
+
+    setTimeout(function(){
+
+        openDashboard();
+
+    },700);
+
+}
+
+
+
+/* ==================================================
+   FORGOT PASSWORD
+================================================== */
+
+function forgotPassword(){
+
+    alert(
+        "Demo Version: Password recovery-এর জন্য backend/email system প্রয়োজন।"
+    );
+
+}
+
+
+
+/* ==================================================
+   DASHBOARD
+================================================== */
+
+function openDashboard(){
+
+    if(!currentUser){
+
+        openLogin();
+
+        return;
+
+    }
+
+
+    document.getElementById("homePage")
+    .classList.add("hidden");
+
+    document.getElementById("authPage")
+    .classList.add("hidden");
+
+    document.getElementById("homeHeader")
+    .classList.add("hidden");
+
+    document.getElementById("dashboardPage")
+    .classList.remove("hidden");
+
+
+    updateUser();
+
+    updateDashboard();
+
+    showDash("overview");
+
+    window.scrollTo(0,0);
+
+}
+
+
+function updateUser(){
+
+    const name =
+    currentUser.name || "User";
+
+
+    document.getElementById(
+        "userTopName"
+    ).innerText = name;
+
+
+    document.getElementById(
+        "welcomeName"
+    ).innerText = name;
+
+
+    document.getElementById(
+        "profileName"
+    ).innerText = name;
+
+
+    document.getElementById(
+        "profileMobile"
+    ).innerText =
+    currentUser.mobile || "-";
+
+
+    document.getElementById(
+        "profileEmail"
+    ).innerText =
+    currentUser.email || "-";
+
+
+    document.getElementById(
+        "avatar"
+    ).innerText =
+    name.charAt(0).toUpperCase();
+
+}
+
+
+
+/* ==================================================
+   DASHBOARD SECTIONS
+================================================== */
+
+function showDash(section,button){
+
+    const sections =
+    document.querySelectorAll(
+        ".dash-section"
+    );
+
+    sections.forEach(function(item){
+
+        item.classList.add("hidden");
+
+    });
+
+
+    const target =
+    document.getElementById(section);
+
+    if(target){
+
+        target.classList.remove("hidden");
+
+    }
+
+
+    if(button){
+
+        document.querySelectorAll(
+            ".side-btn"
+        ).forEach(function(btn){
+
+            btn.classList.remove("active");
+
+        });
+
+        button.classList.add("active");
+
+    }
+
+}
+
+
+
+/* ==================================================
+   UPDATE DASHBOARD
+================================================== */
+
+function updateDashboard(){
+
+    document.getElementById(
+        "balance"
+    ).innerText = money(balance);
+
+
+    document.getElementById(
+        "statBalance"
+    ).innerText = money(balance);
+
+
+    document.getElementById(
+        "accountBalance"
+    ).innerText = money(balance);
+
+
+    document.getElementById(
+        "totalDeposit"
+    ).innerText = money(totalDeposit);
+
+
+    document.getElementById(
+        "totalWithdraw"
+    ).innerText = money(totalWithdraw);
+
+
+    document.getElementById(
+        "transactionCount"
+    ).innerText =
+    transactions.length;
+
+
+    renderTransactions();
+
+}
+
+
+
+/* ==================================================
+   DEPOSIT
+================================================== */
+
+function openDeposit(){
+
+    document.getElementById(
+        "depositModal"
+    ).classList.remove("hidden");
+
+    document.getElementById(
+        "depositAmount"
+    ).value = "";
+
+}
+
+
+function closeDeposit(){
+
+    document.getElementById(
+        "depositModal"
+    ).classList.add("hidden");
+
+}
+
+
+function makeDeposit(){
+
+    const input =
+    document.getElementById(
+        "depositAmount"
+    );
+
+    const amount =
+    Number(input.value);
+
+
+    if(!amount || amount <= 0){
+
+        alert(
+            "সঠিক Deposit amount দিন।"
+        );
+
+        return;
+
+    }
+
+
+    balance += amount;
+
+    totalDeposit += amount;
+
+
+    transactions.unshift({
+
+        date:new Date().toLocaleString(
+            "bn-BD"
+        ),
+
+        type:"Deposit",
+
+        amount:amount,
+
+        balance:balance
+
+    });
+
+
+    saveData();
+
+    updateDashboard();
+
+    closeDeposit();
+
+    showToast(
+        "Demo Deposit সফল হয়েছে: " +
+        money(amount)
+    );
+
+}
+
+
+
+/* ==================================================
+   WITHDRAW
+================================================== */
+
+function openWithdraw(){
+
+    document.getElementById(
+        "withdrawModal"
+    ).classList.remove("hidden");
+
+    document.getElementById(
+        "withdrawAmount"
+    ).value = "";
+
+}
+
+
+function closeWithdraw(){
+
+    document.getElementById(
+        "withdrawModal"
+    ).classList.add("hidden");
+
+}
+
+
+function makeWithdraw(){
+
+    const input =
+    document.getElementById(
+        "withdrawAmount"
+    );
+
+    const amount =
+    Number(input.value);
+
+
+    if(!amount || amount <= 0){
+
+        alert(
+            "সঠিক Withdraw amount দিন।"
+        );
+
+        return;
+
+    }
+
+
+    if(amount > balance){
+
+        alert(
+            "Balance-এর চেয়ে বেশি Withdraw করা যাবে না।"
+        );
+
+        return;
+
+    }
+
+
+    balance -= amount;
+
+    totalWithdraw += amount;
+
+
+    transactions.unshift({
+
+        date:new Date().toLocaleString(
+            "bn-BD"
+        ),
+
+        type:"Withdraw",
+
+        amount:amount,
+
+        balance:balance
+
+    });
+
+
+    saveData();
+
+    updateDashboard();
+
+    closeWithdraw();
+
+    showToast(
+        "Demo Withdraw সফল হয়েছে: " +
+        money(amount)
+    );
+
+}
+
+
+
+/* ==================================================
+   TRANSACTION HISTORY
+================================================== */
+
+function renderTransactions(){
+
+    const body =
+    document.getElementById(
+        "transactionBody"
+    );
+
+
+    body.innerHTML = "";
+
+
+    if(transactions.length === 0){
+
+        body.innerHTML = `
+
+        <tr>
+
+        <td colspan="5"
+        style="text-align:center;color:#64748b">
+
+        এখনো কোনো transaction নেই।
+
+        </td>
+
+        </tr>
+
+        `;
+
+        return;
+
+    }
+
+
+    transactions.forEach(function(tx){
+
+        const row =
+        document.createElement("tr");
+
+
+        const statusClass =
+        tx.type === "Deposit"
+        ? "success"
+        : "withdraw";
+
+
+        row.innerHTML = `
+
+        <td>
+        ${tx.date}
+        </td>
+
+        <td>
+        ${tx.type === "Deposit"
+        ? "💰 Deposit"
+        : "💸 Withdraw"}
+        </td>
+
+        <td>
+        ${money(tx.amount)}
+        </td>
+
+        <td>
+        ${money(tx.balance)}
+        </td>
+
+        <td>
+
+        <span class="status ${statusClass}">
+        Demo Success
+        </span>
+
+        </td>
+
+        `;
+
+
+        body.appendChild(row);
+
+    });
+
+}
+
+
+
+/* ==================================================
+   LOGOUT
+================================================== */
+
+function logout(){
+
+    currentUser = null;
+
+    localStorage.removeItem(
+        "vc_user"
+    );
+
+    showHome();
+
+    showToast(
+        "Logout সফল হয়েছে।"
+    );
+
+}
+
+
+
+/* ==================================================
+   START
+================================================== */
+
+if(currentUser){
+
+    /* User is remembered in this browser.
+       Dashboard is NOT opened automatically
+       so homepage remains visible. */
+
+}
+
+</script>
 
 </body>
 </html>
